@@ -9,11 +9,16 @@ namespace UserRegistrationAnnotations
 {
     public class UserValidation
     {
+        public string message;
+        public UserValidation()
+        {
+
+        }
         /// <summary>
         /// Annoations
         /// </summary>
         UserProperties userProperties = new UserProperties();
-        public void GetDetails()
+        public string GetDetails()
         {
             Console.WriteLine("Enter first name");
             userProperties.FirstName = Console.ReadLine();
@@ -25,6 +30,7 @@ namespace UserRegistrationAnnotations
             userProperties.PhoneNumber = Console.ReadLine();
             Console.WriteLine("Enter Password");
             userProperties.Password = Console.ReadLine();
+            return "Successfully got the detail";
             ValidatorDemo();
 
         }
