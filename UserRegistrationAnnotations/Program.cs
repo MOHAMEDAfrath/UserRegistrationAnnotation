@@ -7,6 +7,8 @@ namespace UserRegistrationAnnotations
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            UserValidation userValidation = new UserValidation();
+            userValidation.GetDetails();
         }
     }
 }
