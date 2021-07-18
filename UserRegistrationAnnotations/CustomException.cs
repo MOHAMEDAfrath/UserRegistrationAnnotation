@@ -11,7 +11,7 @@ namespace UserRegistrationAnnotations
 
         public enum ExceptionType
         {
-            NULL_MESSAGE, EMPTY_MESSAGE, NO_SUCH_METHOD, NO_SUCH_CLASS, NO_CONSTRUCTOR_FOUND, NO_METHOD_FOUND, INVALID_MESSAGE, NO_FIELD_FOUND
+            NO_SUCH_METHOD, NO_SUCH_CLASS, NO_CONSTRUCTOR_FOUND, NO_METHOD_FOUND, INVALID_MESSAGE, NO_FIELD_FOUND
         }
         ExceptionType exceptiontype;
         public CustomException(ExceptionType exception, string message) : base(message)
