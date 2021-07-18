@@ -9,6 +9,9 @@ namespace UserRegistrationAnnotations
 {
     public class UserValidation
     {
+        /// <summary>
+        /// Annoations
+        /// </summary>
         UserProperties userProperties = new UserProperties();
         public void GetDetails()
         {
