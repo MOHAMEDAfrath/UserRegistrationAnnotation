@@ -14,14 +14,15 @@ namespace TestUserRegistration
                 expected.Equals(actual);
 
             }
-        //Invoke method for happy message
-            [TestMethod]
-            public void TestInvokeMethod()
-            {
-                string expected = "Successfully got the details";
-               string actual = ReflectionFactory.InvokeMethod("GetDetails");
-                Assert.AreEqual(expected, actual);
-            }
+        [TestMethod]
+        public void TestParameterConstructor()
+        {
+            object expected = new UserValidation(null);
+            object actual = ReflectionFactory.CreateParameterizedConstructor("UserRegistrationAnnotations.UserValidation", "UserValidation", "Happy");
+            actual.Equals(expected);
+        }
+      
+        
         [TestMethod]
             public void TestSetFields()
             {

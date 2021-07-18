@@ -32,12 +32,34 @@ namespace UserRegistrationAnnotations
                 throw new CustomException(CustomException.ExceptionType.NO_CONSTRUCTOR_FOUND, "No constructor found");
             }
         }
+        public static object CreateParameterizedConstructor(string classname, string constructorname, string message)
+        {
+            Type type = typeof(UserValidation);
+            if (type.Name.Equals(classname) || type.FullName.Equals(classname))
+            {
+                if (type.Name.Equals(constructorname))
+                {
+                    ConstructorInfo constructorInfo = type.GetConstructor(new[] { typeof(string) });
+                    object objectConstructor = constructorInfo.Invoke(new object[] { message });
+                    return objectConstructor;
+                }
+                else
+                {
+                    throw new CustomException(CustomException.ExceptionType.NO_CONSTRUCTOR_FOUND, "No constructor found");
+                }
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.NO_SUCH_CLASS, "No class found");
+            }
+
+        }
         public static string InvokeMethod(string methodname)
         {
             try
             {
                 Type type = Type.GetType("UserRegistrationAnnotations.UserValidation");
-                object methodObject = ReflectionFactory.CreateObjectForMoodAnalyse("UserRegistrationAnnotations.UserValidation", "UserValidation");
+                object methodObject = ReflectionFactory.CreateParameterizedConstructor("UserRegistrationAnnotations.UserValidation", "UserValidation","Done");
                 MethodInfo methodInfo = type.GetMethod(methodname);
                 object method = methodInfo.Invoke(methodObject, null);
                 return method.ToString();
