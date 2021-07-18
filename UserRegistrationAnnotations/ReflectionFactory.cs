@@ -10,6 +10,7 @@ namespace UserRegistrationAnnotations
 {
     public class ReflectionFactory
     {
+        //creates object for a class using assembly
         public static object CreateObjectForMoodAnalyse(string classname, string constructorname)
         {
             string pattern = @"." + constructorname + "$";
@@ -32,6 +33,7 @@ namespace UserRegistrationAnnotations
                 throw new CustomException(CustomException.ExceptionType.NO_CONSTRUCTOR_FOUND, "No constructor found");
             }
         }
+        //using relection to create parameterized constructor
         public static object CreateParameterizedConstructor(string classname, string constructorname, string message)
         {
             Type type = typeof(UserValidation);
@@ -54,6 +56,7 @@ namespace UserRegistrationAnnotations
             }
 
         }
+        //using reflection to access the method 
         public static string InvokeMethod(string methodname)
         {
             try
@@ -71,6 +74,7 @@ namespace UserRegistrationAnnotations
                 throw new CustomException(CustomException.ExceptionType.NO_METHOD_FOUND, "No method found");
             }
         }
+        //using reflection to add data to fields
         public static string SetMessage(string variable, string message)
         {
             try

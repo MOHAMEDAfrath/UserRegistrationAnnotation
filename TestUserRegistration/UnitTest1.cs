@@ -6,6 +6,7 @@ namespace TestUserRegistration
     [TestClass]
     public class UnitTest1
     {
+        //test object creation using reflection
             [TestMethod]
             public void TestCreateObjectWithRelections()
             {
@@ -14,6 +15,7 @@ namespace TestUserRegistration
                 expected.Equals(actual);
 
             }
+        //test method for constructor creation
         [TestMethod]
         public void TestParameterConstructor()
         {
@@ -22,7 +24,7 @@ namespace TestUserRegistration
             actual.Equals(expected);
         }
       
-        
+        //set field test using reflection
         [TestMethod]
             public void TestSetFields()
             {

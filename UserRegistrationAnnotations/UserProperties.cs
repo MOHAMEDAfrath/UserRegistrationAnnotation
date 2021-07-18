@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace UserRegistrationAnnotations
 {
+    /// <summary>
+    /// Using annotations for user registration
+    /// </summary>
     public class UserProperties
     {
         [Required (ErrorMessage = "{0} is required")]
