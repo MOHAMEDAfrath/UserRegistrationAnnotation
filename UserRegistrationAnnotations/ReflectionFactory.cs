@@ -80,7 +80,7 @@ namespace UserRegistrationAnnotations
                 FieldInfo fieldInfo = type.GetField(variable, BindingFlags.Public | BindingFlags.Instance);
                 if (message == null)
                 {
-                    throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "Message is empty");
+                    throw new CustomException(CustomException.ExceptionType.INVALID_MESSAGE, "Message is empty");
                 }
                 else
                 {

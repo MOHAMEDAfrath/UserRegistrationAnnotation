@@ -17,19 +17,19 @@ namespace TestUserRegistration
         [TestMethod]
         public void TestParameterConstructor()
         {
-            object expected = new UserValidation(null);
-            object actual = ReflectionFactory.CreateParameterizedConstructor("UserRegistrationAnnotations.UserValidation", "UserValidation", "Happy");
+            object expected = new UserValidation("validation of user");
+            object actual = ReflectionFactory.CreateParameterizedConstructor("UserRegistrationAnnotations.UserValidation", "UserValidation", "validation of user");
             actual.Equals(expected);
         }
       
         
-        [TestMethod]
-            public void TestSetFields()
+      [TestMethod]
+        public void TestSetFields()
             {
-                string expected = "Happy";
-                string actual = ReflectionFactory.SetMessage("message", "Happy");
+                string expected = "Validation of user";
+                string actual = ReflectionFactory.SetMessage("message", "Validation of user");
                 Assert.AreEqual(expected, actual);
             }
-            
+
         }
 }
